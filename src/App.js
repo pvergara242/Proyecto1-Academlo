@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Login from './components/Login';
+import Loading from './components/Loading';
+import Registro from './components/Registro';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      Registro:true,
+      Login:true,
+      showView: "Loading"
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ showView: "Registro"});
+    },2000);
+  }
+  toLogin= ( )=>{
+    this.setState({ showView: "Login" });
+  }
+  toRegistro= ( )=>{
+    this.setState({ showView: "Registro" });
+  }
+    render() {
+      switch (this.state.showView) {
+        case "Loading":
+          return (
+            <div>
+            <Loading/>
+          </div>
+          );
+        case "Registro":
+          return (
+            <div>
+            <Registro toLogin={this.toLogin}/>
+          </div>
+          );
+        case "Login":
+          return (
+            <div>
+              <Login toRegistro={this.toRegistro}/>
+            </div>
+          );
+          default:
+            return
+      
+    }
+  }
 }
 
-export default App;
+
