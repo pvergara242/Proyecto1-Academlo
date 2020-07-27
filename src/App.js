@@ -2,7 +2,7 @@ import React from 'react';
 import Login from './components/Login';
 import Loading from './components/Loading';
 import Registro from './components/Registro';
-
+//Hola creo que hace falta importar Task y luego meterlo en el switch.  pero esta quedando bien organizado
 export default class App extends React.Component {
   constructor() {
     super();
