@@ -2,6 +2,9 @@ import React from 'react';
 import Login from './components/Login';
 import Loading from './components/Loading';
 import Registro from './components/Registro';
+import Task from './components/Task';
+
+
 
 export default class App extends React.Component {
   constructor() {
@@ -9,6 +12,7 @@ export default class App extends React.Component {
     this.state = {
       Registro:true,
       Login:true,
+       Task:true,
       showView: "Loading"
     };
   }
@@ -23,6 +27,9 @@ export default class App extends React.Component {
   }
   toRegistro= ( )=>{
     this.setState({ showView: "Registro" });
+  }
+  toTask= ( )=>{
+    this.setState({ showView: "Task" });
   }
     render() {
       switch (this.state.showView) {
@@ -41,9 +48,15 @@ export default class App extends React.Component {
         case "Login":
           return (
             <div>
-              <Login toRegistro={this.toRegistro}/>
+              <Login toRegistro={this.toRegistro} toTask={this.toTask}/>
             </div>
           );
+          case "Task":
+            return (
+              <div>
+                <Task toTask={this.toTask}/>
+              </div>
+            );
           default:
             return
       

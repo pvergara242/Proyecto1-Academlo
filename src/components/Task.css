@@ -1,0 +1,32 @@
+/* botones */
+.agregar{
+    margin-left: 580px;
+    margin-top: 50px;
+}
+
+.actualizar{
+    margin-left: -280px;
+    margin-top: 20px;
+}
+.eliminar{
+    margin-left: -100px;
+}
+.input{
+   margin-left: 550px; 
+    
+}
+.fecha{
+    margin-left: 580px; 
+}
+.tabla{
+    margin-top: 20px;
+}
+h1{
+    margin-left: 510px; 
+}
+.select{
+    margin-left: 580px;
+    margin-top: 40px;
+    height: 40px;
+}
+
